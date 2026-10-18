@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PhishGuard is an educational phishing awareness platform with URL analysis, security tips, case studies and an interactive quiz.">
+  <title>PhishGuard | Phishing Awareness</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home"><span class="brand-icon">盾</span> Phish<span>Guard</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#analyzer">URL Analyzer</a>
+      <a href="#learn">Learn</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle colour theme">☀️</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> CYBER AWARENESS PLATFORM</div>
+        <h1>Think before you <span class="gradient-text">click.</span></h1>
+        <p>Learn to recognize phishing attempts, inspect suspicious links, and build safer online habits with PhishGuard.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#analyzer">Analyze a URL <span>↗</span></a>
+          <a class="button secondary" href="#learn">Explore awareness tips</a>
+        </div>
+        <div class="hero-note"><span>✓</span> Educational tool · No login required · Runs in your browser</div>
+      </div>
+
+      <div class="hero-visual" aria-label="Illustration of digital security">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="shield">
+          <div class="shield-inner">✓</div>
+        </div>
+        <div class="float-card card-top"><span>●</span> Link inspection</div>
+        <div class="float-card card-bottom"><span>✓</span> Stay alert online</div>
+        <div class="decor decor-one"></div>
+        <div class="decor decor-two"></div>
+      </div>
+    </section>
+
+    <section class="stats section" aria-label="Platform features">
+      <article class="stat-card"><span class="stat-icon">⌕</span><div><strong>URL Analysis</strong><p>Check common warning signs</p></div></article>
+      <article class="stat-card"><span class="stat-icon">◎</span><div><strong>Learn by Example</strong><p>Understand phishing scenarios</p></div></article>
+      <article class="stat-card"><span class="stat-icon">✓</span><div><strong>Test Your Knowledge</strong><p>Practice safer decisions</p></div></article>
+    </section>
+
+    <section class="section content-section" id="analyzer">
+      <div class="section-heading">
+        <span class="eyebrow">INTERACTIVE TOOL</span>
+        <h2>Suspicious URL <span class="gradient-text">Analyzer</span></h2>
+        <p>Enter a URL to check for common phishing indicators. Results are heuristic warnings, not a definitive security verdict.</p>
+      </div>
+
+      <div class="analyzer-panel">
+        <label for="url-input">Website URL</label>
+        <div class="url-input-row">
+          <input id="url-input" type="text" placeholder="https://example.com" autocomplete="url" spellcheck="false">
+          <button id="analyze-btn" class="button primary" type="button">Analyze URL</button>
+        </div>
+        <div class="input-hint">Try an example below, or enter a URL you want to inspect.</div>
+        <div class="sample-links">
+          <button type="button" class="sample-btn" data-url="https://example.com">Example URL</button>
+          <button type="button" class="sample-btn" data-url="http://secure-login.example.invalid/verify">Training example (suspicious)</button>
+        </div>
+        <div id="analyzer-result" class="result-panel" aria-live="polite" hidden></div>
+        <p class="disclaimer">Privacy note: this demo analyzes the text you enter in your browser. It does not visit the submitted website or query a threat-intelligence service.</p>
+      </div>
+    </section>
+
+    <section class="section content-section" id="learn">
+      <div class="section-heading">
+        <span class="eyebrow">KNOW THE WARNING SIGNS</span>
+        <h2>How to spot a <span class="gradient-text">phishing attempt</span></h2>
+        <p>Attackers often use urgency, impersonation and misleading links to influence decisions.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">✉</span><h3>Suspicious emails</h3><p>Look for unexpected requests, mismatched sender addresses, unusual attachments and pressure to act quickly.</p></article>
+        <article class="feature-card"><span class="feature-icon">🔗</span><h3>Misleading URLs</h3><p>Check the actual hostname carefully. Misspellings, unfamiliar domains and unexpected subdomains can be warning signs.</p></article>
+        <article class="feature-card"><span class="feature-icon">🔐</span><h3>Fake login pages</h3><p>A familiar logo does not prove authenticity. Reach important accounts through their official app or known website.</p></article>
+        <article class="feature-card"><span class="feature-icon">🎭</span><h3>Social engineering</h3><p>Scammers may pretend to be a bank, recruiter, delivery service or trusted person to gain your confidence.</p></article>
+      </div>
+    </section>
+
+    <section class="section content-section" id="fake-login">
+      <div class="section-heading">
+        <span class="eyebrow">PRACTICAL AWARENESS</span>
+        <h2>Spot a <span class="gradient-text">fake login page</span></h2>
+        <p>Review these warning signs before entering account details anywhere.</p>
+      </div>
+      <div class="login-layout">
+        <div class="login-illustration">
+          <div class="browser-bar"><span></span><span></span><span></span><div>Unknown website</div></div>
+          <div class="mock-login">
+            <div class="mock-lock">🔒</div>
+            <h3>Sign-in request</h3>
+            <p class="muted">Illustrative example — not a real login form</p>
+            <div class="mock-field">Email address</div>
+            <div class="mock-field">Password</div>
+            <div class="mock-submit">Sign in</div>
+            <p class="warning-text">Always verify the domain independently.</p>
+          </div>
+        </div>
+        <div class="warning-list">
+          <article><span>01</span><div><h3>Inspect the domain</h3><p>Check the exact hostname, spelling and domain ending. A padlock does not prove a site is legitimate.</p></div></article>
+          <article><span>02</span><div><h3>Question urgent messages</h3><p>Threats about immediate account closure or unusual prizes may be designed to rush you.</p></div></article>
+          <article><span>03</span><div><h3>Never share OTPs</h3><p>Do not disclose passwords, one-time passwords or recovery codes to unexpected callers or messages.</p></div></article>
+          <article><span>04</span><div><h3>Verify independently</h3><p>Open the official app or type a known website address instead of following an unexpected login link.</p></div></article>
+        </div>
+      </div>
+      <div class="demo-callout">
+        <div><strong>Quick scenario</strong><p>A message says your account will be suspended unless you sign in immediately.</p></div>
+        <button class="button secondary" id="warning-btn" type="button">Reveal safe response</button>
+        <p id="warning-answer" class="warning-answer" hidden>Do not follow the message link. Visit the official service independently and check your account there.</p>
+      </div>
+    </section>
+
+    <section class="section content-section" id="social-engineering">
+      <div class="section-heading">
+        <span class="eyebrow">UNDERSTAND THE TACTICS</span>
+        <h2>Common social engineering <span class="gradient-text">techniques</span></h2>
+      </div>
+      <div class="technique-grid">
+        <article class="technique-card"><strong>Urgency</strong><p>“Act now or your account will be closed.”</p><span>Pause and verify.</span></article>
+        <article class="technique-card"><strong>Impersonation</strong><p>A message pretends to come from a trusted organization.</p><span>Verify the sender independently.</span></article>
+        <article class="technique-card"><strong>Curiosity</strong><p>An unexpected attachment promises shocking or exciting content.</p><span>Do not open unverified files.</span></article>
+        <article class="technique-card"><strong>Reward or fear</strong><p>A prize, refund or threat is used to influence your decision.</p><span>Check through official channels.</span></article>
+      </div>
+    </section>
+
+    <section class="section content-section" id="cases">
+      <div class="section-heading">
+        <span class="eyebrow">LEARN FROM SCENARIOS</span>
+        <h2>Phishing <span class="gradient-text">case studies</span></h2>
+        <p>These are illustrative educational scenarios, not claims about verified individual incidents.</p>
+      </div>
+      <div class="case-grid">
+        <article class="case-card"><div class="case-top"><span>CASE 01</span><span class="case-type">EMAIL</span></div><h3>Fake account alert</h3><p><strong>Scenario:</strong> An email claims an account will be closed unless the recipient signs in immediately.</p><p><strong>Warning signs:</strong> Unexpected urgency, an unfamiliar sender and a login link.</p><p><strong>Safe response:</strong> Open the official app or website independently and check the account.</p></article>
+        <article class="case-card"><div class="case-top"><span>CASE 02</span><span class="case-type">DELIVERY</span></div><h3>Unexpected delivery fee</h3><p><strong>Scenario:</strong> A text claims a parcel is waiting for a small extra payment.</p><p><strong>Warning signs:</strong> Unexpected payment request and an unverified tracking link.</p><p><strong>Safe response:</strong> Verify the tracking number through the courier's official service.</p></article>
+        <article class="case-card"><div class="case-top"><span>CASE 03</span><span class="case-type">RECRUITMENT</span></div><h3>Fake job offer</h3><p><strong>Scenario:</strong> A recruiter promises guaranteed work but requests an unexpected fee.</p><p><strong>Warning signs:</strong> Unverifiable recruiter details, pressure and payment demands.</p><p><strong>Safe response:</strong> Independently verify the employer and never rush into payment.</p></article>
+      </div>
+    </section>
+
+    <section class="section content-section" id="checklist">
+      <div class="section-heading">
+        <span class="eyebrow">BUILD SAFER HABITS</span>
+        <h2>Your security <span class="gradient-text">checklist</span></h2>
+        <p>Tick each action as you review it. Your progress is kept only in this page session.</p>
+      </div>
+      <div class="checklist-panel">
+        <div class="checklist-header"><strong>Personal safety checklist</strong><span id="check-count">0 / 6 completed</span></div>
+        <div class="progress-track"><div id="check-progress"></div></div>
+        <label class="check-item"><input type="checkbox"><span>Check the sender and message context before trusting a request.</span></label>
+        <label class="check-item"><input type="checkbox"><span>Inspect website domains before signing in or paying.</span></label>
+        <label class="check-item"><input type="checkbox"><span>Never share passwords, OTPs or recovery codes.</span></label>
+        <label class="check-item"><input type="checkbox"><span>Use unique passwords and a trusted password manager.</span></label>
+        <label class="check-item"><input type="checkbox"><span>Enable multi-factor authentication when available.</span></label>
+        <label class="check-item"><input type="checkbox"><span>Report suspicious messages and avoid their links.</span></label>
+        <p id="check-message" class="muted" aria-live="polite">Every checked action helps build safer habits.</p>
+      </div>
+    </section>
+
+    <section class="section content-section" id="quiz">
+      <div class="section-heading">
+        <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+        <h2>Phishing awareness <span class="gradient-text">quiz</span></h2>
+        <p>Answer five questions and review the explanations.</p>
+      </div>
+      <div class="quiz-panel">
+        <div class="quiz-meta"><span id="question-count">QUESTION 1 OF 5</span><span id="score-label">Score: 0</span></div>
+        <div class="progress-track"><div id="quiz-progress"></div></div>
+        <h3 id="question-text">Loading question...</h3>
+        <div id="answer-options" class="answer-options"></div>
+        <p id="quiz-feedback" aria-live="polite"></p>
+        <div class="quiz-actions"><button id="next-btn" class="button primary" type="button" hidden>Next question →</button><button id="restart-btn" class="button secondary" type="button" hidden>Try again ↻</button></div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="cta-icon">✓</div>
+      <h2>Pause. Verify. Then click.</h2>
+      <p>A few seconds of checking can help protect your personal information.</p>
+      <a href="#analyzer" class="button primary">Try the URL Analyzer ↑</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home">Phish<span>Guard</span></a>
+    <p>Cybersecurity awareness project · CODSOFT Task 2</p>
+    <p class="footer-note">Educational demonstration only. No security verdict is guaranteed.</p>
+    <p>© <span id="current-year"></span> PhishGuard</p>
+  </footer>
+</body>
+</html>
